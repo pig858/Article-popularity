@@ -1,7 +1,9 @@
 /**
  *  articleID is the id in your database which u identify the article
  */
-
+$lifetime = 3600;                                               // 3600sec = 1 hour
+session_set_cookie_params($lifetime);                           // set session's lifetime if visitor read your article after a hour then your popularity will plus 1.
+session_start();                                                
 
 if(!isset($_SESSION['visitor'])){                               // To see if visitor first watch your article 
         $visitor=session_id();                                  // get session id
